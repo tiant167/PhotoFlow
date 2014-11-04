@@ -8,10 +8,4 @@
  * Controller of the photoFlowApp
  */
 angular.module('photoFlowApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('BlogCtrl', function($scope) {});
