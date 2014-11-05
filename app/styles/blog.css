@@ -159,6 +159,8 @@ h3 {
 @media (min-width: 48em) {
   .content {
     padding: 2em 3em 0;
+  }
+  .right-column{
     margin-left: 25%;
   }
 
