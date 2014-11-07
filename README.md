@@ -5,6 +5,11 @@
 - 我也不知道也要做什么呀…
 
 ## Run it
+### FrontEnd
 1. clone it git clone https://github.com/tiant167/PhotoFlow
 2. cd PhotoFlow && npm install && bower install
 3. grunt serve
+### BackEnd
+1. Create Virtual Enviroment with virtualenvwrapper ( you can easily install by `pip install virtualenvwrapper`)
+        mkvirtualenv env1
+

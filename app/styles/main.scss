@@ -78,11 +78,11 @@
     margin: 0;
     color: #333;
     text-align: center;
-    padding: 1em 2em 0;
+    padding: 0 2em 0 1em;
     border-bottom: 1px solid #eee;
 
     h1 {
-        margin: 0.2em 0;
+        margin: 0 0 0.2em 0;
         font-size: 3em;
         font-weight: 300;
     }
@@ -108,4 +108,20 @@
 
 .article-share {
     float: right;
+    i {
+        margin:0 3px;
+    }
+}
+.fa{
+    color: #888;
+    cursor: pointer;
+    &:hover {
+        color: #000;
+    }
+}
+.fa-2 {
+  font-size: 2em;
+}
+.fa-3 {
+  font-size: 3em;
 }
