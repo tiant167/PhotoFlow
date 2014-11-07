@@ -10,6 +10,10 @@
 2. cd PhotoFlow && npm install && bower install
 3. grunt serve
 ### BackEnd
-1. Create Virtual Enviroment with virtualenvwrapper ( you can easily install by `pip install virtualenvwrapper`)
+We are using Django 1.7, python 2.7 is required.
+1. Create Virtual Enviroment with virtualenvwrapper. ( you can easily install by `pip install virtualenvwrapper`)
         mkvirtualenv env1
-
+2. Use pip to install requirements. `pip install requirements.txt`
+2. Rename settings.py.dev into settings.py, and config your own secret key and mysql and other settings.
+3. Syncdb `python manager.py syncdb`
+5. Migrate Database `python manager.py migrate`

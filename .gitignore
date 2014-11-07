@@ -6,3 +6,4 @@ bower_components
 dump.rdb
 *.pyc
 settings.py
+db.sqlite3
