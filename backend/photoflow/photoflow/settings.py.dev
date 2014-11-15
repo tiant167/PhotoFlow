@@ -37,9 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'sysmon',
     'rest_framework',
     'django-markdown',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
