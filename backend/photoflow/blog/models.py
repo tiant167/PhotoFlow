@@ -1,11 +1,27 @@
 from django.db import models
 
 # Create your models here.
+class BlogManager(models.Manager):
+    def get_blog_list(self):
+        '''
+        returns the list of all blogs.
+
+        content is cutted
+        '''
+        blogs = self.all()
+        for blog in blogs:
+            if len(blog.content) > 100:
+                blog.content = blog.content[:100] + '...'
+        return blogs
+
+
 class Blog(models.Model):
     title = models.CharField(max_length=300)
     content = models.TextField()
     create_time = models.DateTimeField(auto_now_add=True)
     pinned = models.BooleanField(default=False)
+
+    objects = BlogManager()
 
     def __unicode__(self):
         return self.title
