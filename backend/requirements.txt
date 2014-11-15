@@ -1,2 +1,4 @@
 djangorestframework
 markdown
+django-markdown
+django-grappelli
