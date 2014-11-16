@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular.module('photoFlowApp', ['ngRoute'])
+angular.module('photoFlowApp', ['ngRoute', 'photoFlowApp.base.services.api'])
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
