@@ -10,7 +10,7 @@ class BlogList(APIView):
     def get(self,request):
         blogs = Blog.objects.get_blog_list()
         serializer = BlogSerializer(blogs,many=True)
-        return Response(serializer.data)
+        return Response(serializer.data,headers={'Access-Control-Allow-Origin':'*'})
 
 
 class BlogDetail(APIView):
@@ -21,4 +21,4 @@ class BlogDetail(APIView):
     def get(self,request,pk):
         blog = self.get_object(pk)
         serializer = BlogSerializer(blog)
-        return Response(serializer.data)
+        return Response(serializer.data,headers={'Access-Control-Allow-Origin':'*'})

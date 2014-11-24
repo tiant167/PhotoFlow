@@ -9,14 +9,19 @@
  */
 angular.module('photoFlowApp')
   .controller('BlogCtrl', ['$scope', 'apiHelper',
-    function($scope) {
+    function($scope, apiHelper) {
       // config apiHelper
+      var prefix = 'http://localhost:8000';
       var apiMap = {
         // delBlackList: 'GET /api/app/{app_id}/blacklist/delete',
-
+        getBlogList: 'GET ' + prefix + '/blog/list/'
       };
       apiHelper.config(apiMap);
 
+      apiHelper('getBlogList').then(function(data) {
+        $scope.blogsList = data.data;
+        console.log($scope.bolgsList);
+      });
 
     }
   ]);
