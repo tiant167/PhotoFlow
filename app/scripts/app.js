@@ -19,7 +19,7 @@ angular.module('photoFlowApp', ['ngRoute', 'photoFlowApp.base.services.api'])
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl'
       })
-      .when('/article', {
+      .when('/article/:id', {
         templateUrl: 'views/article.html',
         controller: 'ArticleCtrl'
       })
