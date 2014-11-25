@@ -13,12 +13,11 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="bower_components/pure/grids-responsive.css" />
     <link rel="stylesheet" href="bower_components/fancybox/source/jquery.fancybox.css"/>
     <link rel="stylesheet" href="bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.css"/>
-    <!-- <link rel="stylesheet" href="styles/gallery.css"> -->
     <link rel="stylesheet" href="styles/gallery-grid.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/blog.css">
     <!-- endbuild -->
   </head>
@@ -94,17 +93,23 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-markdown-directive/markdown.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script type="text/javascript" src="bower_components/fancybox/source/jquery.fancybox.pack.js"></script>
+        <script type="text/javascript" src="bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
+        <script src="bower_components/showdown/src/showdown.js"></script>
+
         <script src="scripts/app.js"></script>
         <script src="scripts/service.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/blog.js"></script>
         <script src="scripts/controllers/article.js"></script>
-        <script type="text/javascript" src="bower_components/fancybox/source/jquery.fancybox.pack.js"></script>
-        <script type="text/javascript" src="bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
+        
+
         <!-- endbuild -->
 
     

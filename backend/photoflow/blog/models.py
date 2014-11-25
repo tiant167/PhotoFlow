@@ -17,11 +17,17 @@ class BlogManager(models.Manager):
 
 class Blog(models.Model):
     title = models.CharField(max_length=300)
+    subtitle = models.CharField(max_length=300,blank=True,null=True)
     content = models.TextField()
     create_time = models.DateTimeField(auto_now_add=True)
     pinned = models.BooleanField(default=False)
+    tags = models.ManyToManyField('Tag',blank=True,null=True)
 
     objects = BlogManager()
 
     def __unicode__(self):
         return self.title
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=300)

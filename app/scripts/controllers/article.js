@@ -24,6 +24,7 @@ angular.module('photoFlowApp')
         }
       }).then(function(data) {
         $scope.blog = data.data;
-      })
+        $scope.markdown = data.data.content;
+      });
     }
   ]);
