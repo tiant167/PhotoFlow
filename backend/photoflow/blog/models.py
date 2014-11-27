@@ -18,6 +18,7 @@ class BlogManager(models.Manager):
 class Blog(models.Model):
     title = models.CharField(max_length=300)
     subtitle = models.CharField(max_length=300,blank=True,null=True)
+    abstract = models.TextField()
     content = models.TextField()
     create_time = models.DateTimeField(auto_now_add=True)
     pinned = models.BooleanField(default=False)
