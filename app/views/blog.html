@@ -4,30 +4,30 @@
         <h1 class="content-subhead">Pinned Post</h1>
 
         <!-- A single blog post -->
-        <section class="post">
+        <section class="post" ng-repeat="blog in blogsList | filter: {'pinned':true}">
             <header class="post-header">
 
-                <h2 class="post-title">Introducing Pure</h2>
+                <h2 class="post-title">{{blog.title}}</h2>
 
                 <p class="post-meta">
-                    By <a href="#" class="post-author">Tilo Mitra</a> under <a class="post-category post-category-design" href="#">CSS</a> <a class="post-category post-category-pure" href="#">Pure</a>
+                    Created at <a herf="#">{{blog.create_time | date:'yyyy-MM-dd'}} </a><a class="post-category post-category-design" href="#">CSS</a> <a class="post-category post-category-pure" href="#">Pure</a>
                 </p>
             </header>
 
             <div class="post-description">
                 <p>
-                    Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the <a href="https://speakerdeck.com/tilomitra/pure-bliss">slides from the presentation</a>. Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.
+                    {{blog.abstract}}
                 </p>
             </div>
             <div class="read-more">
-                <a href="#/article">Read More</a>
+                <a href="#/article/{{blog.id}}">Read More</a>
             </div>
         </section>
     </div>
 
     <div class="posts">
         <h1 class="content-subhead">Recent Posts</h1>
-        <section class="post" ng-repeat="blog in blogsList">
+        <section class="post" ng-repeat="blog in blogsList | filter: {'pinned':false}">
             <header class="post-header">
 
                 <h2 class="post-title">{{blog.title}}</h2>

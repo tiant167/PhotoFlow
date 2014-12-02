@@ -8,9 +8,9 @@
  * Controller of the photoFlowApp
  */
 angular.module('photoFlowApp')
-  .controller('ArticleCtrl', ['$scope', 'apiHelper', '$routeParams',
+  .controller('ArticleCtrl', ['$scope', 'apiHelper', '$routeParams', '$location',
 
-    function($scope, apiHelper, $routeParams) {
+    function($scope, apiHelper, $routeParams, $location) {
       var prefix = 'http://localhost:8000';
       var apiMap = {
         // delBlackList: 'GET /api/app/{app_id}/blacklist/delete',
@@ -26,5 +26,9 @@ angular.module('photoFlowApp')
         $scope.blog = data.data;
         $scope.markdown = data.data.content;
       });
+
+      $scope.jumpToURL = function(path) {
+        $location.path(path);
+      };
     }
   ]);

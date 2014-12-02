@@ -20,7 +20,6 @@ angular.module('photoFlowApp')
 
       apiHelper('getBlogList').then(function(data) {
         $scope.blogsList = data.data;
-        console.log($scope.bolgsList);
       });
 
     }
