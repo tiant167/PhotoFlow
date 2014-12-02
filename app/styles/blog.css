@@ -120,16 +120,16 @@ h3 {
   background: #999;
   font-size: 80%;
 }
-  .post-category-design {
+  .post-category-green {
       background: #5aba59;
   }
-  .post-category-pure {
+  .post-category-blue {
       background: #4d85d1;
   }
-  .post-category-yui {
+  .post-category-purple {
       background: #8156a7;
   }
-  .post-category-js {
+  .post-category-red {
       background: #df2d4f;
   }
 

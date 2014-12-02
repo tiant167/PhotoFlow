@@ -10,7 +10,7 @@
                 <h2 class="post-title">{{blog.title}}</h2>
 
                 <p class="post-meta">
-                    Created at <a herf="#">{{blog.create_time | date:'yyyy-MM-dd'}} </a><a class="post-category post-category-design" href="#">CSS</a> <a class="post-category post-category-pure" href="#">Pure</a>
+                    Created at <a herf="#">{{blog.create_time | date:'yyyy-MM-dd'}} </a><a class="post-category post-category-{{tag.color}}" href="#" ng-repeat="tag in blog.tags">{{tag.name}}</a>
                 </p>
             </header>
 
@@ -33,7 +33,7 @@
                 <h2 class="post-title">{{blog.title}}</h2>
 
                 <p class="post-meta">
-                    Created at <a herf="#">{{blog.create_time | date:'yyyy-MM-dd'}} </a><a class="post-category post-category-js" href="#">JavaScript</a>
+                    Created at <a herf="#">{{blog.create_time | date:'yyyy-MM-dd'}} </a><a class="post-category post-category-{{tag.color}}" href="#" ng-repeat="tag in blog.tags">{{tag.name}}</a>
                 </p>
             </header>
 

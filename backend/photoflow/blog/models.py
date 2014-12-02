@@ -32,3 +32,7 @@ class Blog(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=300)
+    color = models.CharField(max_length=20)
+
+    def __unicode__(self):
+        return self.name
