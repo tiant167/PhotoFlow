@@ -8,6 +8,7 @@ class Picture(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(null=True,blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
-
+    long = models.BooleanField(default=False)
+    
     def __unicode__(self):
         return self.title
