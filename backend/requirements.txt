@@ -3,3 +3,4 @@ markdown
 django-markdown
 django-grappelli
 django-system-monitor
+pillow
