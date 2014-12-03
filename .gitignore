@@ -8,3 +8,4 @@ dump.rdb
 settings.py
 db.sqlite3
 backend/photoflow/images
+backend/photoflow/static/images
