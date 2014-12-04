@@ -9,13 +9,13 @@
 
     <div class="text-box u-1  u-md-2-3 u-lrg-2-3">
         <div class="l-box">
-            <h1 class="text-box-head">Photos from around the world</h1>
-            <p class="text-box-subhead">A collection of beautiful photos gathered from Unsplash.com.</p>
+            <h1 class="text-box-head" ng-bind="websiteConfig.photo_title"></h1>
+            <p class="text-box-subhead" ng-bind="websiteConfig.photo_description"></p>
         </div>
     </div>
 
     <div class="photo-box u-1 " ng-repeat="pic in pictures" ng-class="{'photo-box-thin' : pic.long , 'u-med-1-2 u-lrg-1-3':!pic.long}">
-        <a class="fancybox-thumb" rel="fancybox-thumb" href="{{pic.img}}">
+        <a class="fancybox-thumb" rel="fancybox-thumb" href="{{pic.img}}" title="{{pic.title}}">
             <img ng-src="{{pic.thumbnail}}" alt="{{pic.title}}" height="250">
         </a>
 

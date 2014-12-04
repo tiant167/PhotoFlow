@@ -13,7 +13,7 @@ angular.module('photoFlowApp', ['ngRoute', 'photoFlowApp.base.services.api', 'ng
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'PictureCtrl'
       })
       .when('/blog', {
         templateUrl: 'views/blog.html',

@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^markdown/', include( 'django_markdown.urls')),
     url(r'^blog/',include('blog.urls')),
     url(r'^picture/',include('picture.urls')),
+    url(r'^website/',include('website.urls')),
 )

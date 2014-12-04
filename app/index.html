@@ -29,11 +29,11 @@
 
     <!-- Add your site or application content here -->
 
-    <div id="layout" class="pure-g">
+    <div id="layout" class="pure-g" ng-controller="MainCtrl">
         <div class="sidebar pure-u-1 pure-u-md-1-4">
             <div class="header">
-                <h1 class="brand-title">Photo Flow</h1>
-                <h2 class="brand-tagline">Photo flows in from all over the World</h2>
+                <h1 class="brand-title" ng-bind="websiteConfig.title"></h1>
+                <h2 class="brand-tagline" ng-bind="websiteConfig.subtitle"></h2>
 
                 <nav class="nav">
                     <ul class="nav-list">
@@ -109,6 +109,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/blog.js"></script>
         <script src="scripts/controllers/article.js"></script>
+        <script src="scripts/controllers/picture.js"></script>
         
 
         <!-- endbuild -->
