@@ -23,6 +23,7 @@ angular.module('photoFlowApp')
         angular.forEach($scope.pictures, function(v) {
           // 这段是为了应对前后端口不一样才做的，上线后不用这一段
           v.img = 'http://localhost:8000/' + v.img;
+          v.thumbnail = 'http://localhost:8000/' + v.thumbnail;
           // 这段是把长的短的区分开
           if (v.long) {
             longPic.push(v);

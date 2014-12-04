@@ -1,14 +1,88 @@
+#! /usr/bin/env python
+#-*-coding:utf-8-*-
 from django.db import models
-
+from django.conf import settings
 # Create your models here.
+
+# thumbnail thanks to http://www.yilmazhuseyin.com/blog/dev/create-thumbnails-imagefield-django/
 class Picture(models.Model):
     img_height = models.PositiveIntegerField(null=True,blank=True)
     img_width = models.PositiveIntegerField(null=True,blank=True)
-    img = models.ImageField(upload_to='static/images',width_field='img_width',height_field='img_height')
+    img = models.ImageField(upload_to=settings.IMAGE_UPLOAD_ROOT,width_field='img_width',height_field='img_height')
+    thumbnail = models.ImageField(upload_to=settings.IMAGE_UPLOAD_ROOT,null=True,blank=True)
     title = models.CharField(max_length=100)
     description = models.TextField(null=True,blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     long = models.BooleanField(default=False)
-    
+
     def __unicode__(self):
         return self.title
+
+    def create_thumbnail(self):
+        # original code for this method came from
+        # http://snipt.net/danfreak/generate-thumbnails-in-django-with-pil/
+
+        # If there is no image associated with this.
+        # do not create thumbnail
+        if not self.img:
+         return
+
+        from PIL import Image
+        from cStringIO import StringIO
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        import os
+
+        # Set our max thumbnail size in a tuple (max width, max height)
+        if self.long:
+            # 竖着的长图我就不考虑了
+            THUMBNAIL_SIZE = (1870,500)
+        else:
+            if self.img_height > self.img_width:
+                THUMBNAIL_SIZE = (750,933)
+            else:
+                THUMBNAIL_SIZE = (622,500)
+
+        DJANGO_TYPE = self.img.file.content_type
+
+        if DJANGO_TYPE == 'image/jpeg':
+            PIL_TYPE = 'jpeg'
+            FILE_EXTENSION = 'jpg'
+        elif DJANGO_TYPE == 'image/png':
+            PIL_TYPE = 'png'
+            FILE_EXTENSION = 'png'
+
+        # Open original photo which we want to thumbnail using PIL's Image
+        image = Image.open(StringIO(self.img.read()))
+
+        # Convert to RGB if necessary
+        # Thanks to Limodou on DjangoSnippets.org
+        # http://www.djangosnippets.org/snippets/20/
+        #
+        # I commented this part since it messes up my png files
+        #
+        #if image.mode not in ('L', 'RGB'):
+        #    image = image.convert('RGB')
+
+        # We use our PIL Image object to create the thumbnail, which already
+        # has a thumbnail() convenience method that contrains proportions.
+        # Additionally, we use Image.ANTIALIAS to make the image look better.
+        # Without antialiasing the image pattern artifacts may result.
+        image.thumbnail(THUMBNAIL_SIZE, Image.ANTIALIAS)
+
+        # Save the thumbnail
+        temp_handle = StringIO()
+        image.save(temp_handle, PIL_TYPE)
+        temp_handle.seek(0)
+
+        # Save image to a SimpleUploadedFile which can be saved into
+        # ImageField
+        suf = SimpleUploadedFile(os.path.split(self.img.name)[-1],
+            temp_handle.read(), content_type=DJANGO_TYPE)
+        # Save SimpleUploadedFile into image field
+        self.thumbnail.save('%s_thumbnail.%s'%(os.path.splitext(suf.name)[0],FILE_EXTENSION), suf, save=False)
+
+    def save(self):
+        # create a thumbnail
+        self.create_thumbnail()
+
+        super(Picture, self).save()

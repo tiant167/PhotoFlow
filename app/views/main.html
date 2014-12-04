@@ -16,7 +16,7 @@
 
     <div class="photo-box u-1 " ng-repeat="pic in pictures" ng-class="{'photo-box-thin' : pic.long , 'u-med-1-2 u-lrg-1-3':!pic.long}">
         <a class="fancybox-thumb" rel="fancybox-thumb" href="{{pic.img}}">
-            <img ng-src="{{pic.img}}" alt="{{pic.title}}">
+            <img ng-src="{{pic.thumbnail}}" alt="{{pic.title}}" height="250">
         </a>
 
         <aside class="photo-box-caption">
