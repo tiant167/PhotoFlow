@@ -1,5 +1,4 @@
 node_modules
-dist
 .tmp
 .sass-cache
 bower_components
@@ -9,3 +8,4 @@ settings.py
 db.sqlite3
 backend/photoflow/images
 backend/photoflow/static/images
+dist

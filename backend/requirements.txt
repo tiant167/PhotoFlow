@@ -1,5 +1,5 @@
 djangorestframework
 markdown
-django-markdown
+django_markdown
 django-system-monitor
 pillow

@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'sysmon',
     'rest_framework',
-    'django-markdown',
+    'django_markdown',
     'blog',
     'picture',
 )
