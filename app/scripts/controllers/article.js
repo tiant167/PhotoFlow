@@ -11,7 +11,7 @@ angular.module('photoFlowApp')
   .controller('ArticleCtrl', ['$scope', 'apiHelper', '$routeParams', '$location',
 
     function($scope, apiHelper, $routeParams, $location) {
-      var prefix = 'http://localhost:8000';
+      var prefix = '/api';
       var apiMap = {
         // delBlackList: 'GET /api/app/{app_id}/blacklist/delete',
         getBlog: 'GET ' + prefix + '/blog/article/:id/'

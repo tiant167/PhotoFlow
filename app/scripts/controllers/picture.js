@@ -10,7 +10,7 @@
 angular.module('photoFlowApp')
   .controller('PictureCtrl', ['$scope', 'apiHelper',
     function($scope, apiHelper) {
-      var prefix = 'http://localhost:8000';
+      var prefix = '/api';
       var apiMap = {
         getPictureList: 'GET ' + prefix + '/picture/list/'
       };
