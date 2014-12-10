@@ -1,0 +1,19 @@
+<!doctype html> <html class="no-js"> <head> <meta charset="utf-8"> <title>Photo Flow</title> <meta name="description" content="Photo flows in from all over the World"> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.920857e7.css"> <link rel="stylesheet" href="styles/main.fd7195fb.css">  <body ng-app="photoFlowApp"> <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <!-- Add your site or application content here --> <div id="layout" class="pure-g" ng-controller="MainCtrl"> <div class="sidebar pure-u-1 pure-u-md-1-4"> <div class="header"> <h1 class="brand-title" ng-bind="websiteConfig.title"></h1> <h2 class="brand-tagline" ng-bind="websiteConfig.subtitle"></h2> <nav class="nav"> <ul class="nav-list"> <li class="nav-item"> <a class="pure-button" href="#/">Photo</a> </li> <li class="nav-item"> <a class="pure-button" href="#/blog">Blog</a> </li> </ul> </nav> </div> </div> <div class="right-column"> <div ng-view></div> <div id="disqus_thread" class="pure-u-1 pure-u-md-2-4 content"></div> </div> </div> <script type="text/javascript">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'tiant167'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();</script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');</script> <!--[if lt IE 9]>
+    <script src="scripts/oldieshim.a466b7b1.js"></script>
+    <![endif]--> <script src="scripts/vendor.1e2092f7.js"></script> <script src="scripts/scripts.e6cd27ef.js"></script>  

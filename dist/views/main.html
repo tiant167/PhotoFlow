@@ -1,0 +1,15 @@
+<div class="photo-box u-1 u-md-1-3 u-lrg-1-3"> <a class="fancybox-thumb" rel="fancybox-thumb" href="http://s3-ap-southeast-1.amazonaws.com/chai-blog/myhead.jpg" title="My Photo"> <img src="http://s3-ap-southeast-1.amazonaws.com/chai-blog/myhead-small.jpg" alt="My Photo"> </a> </div> <div class="text-box u-1 u-md-2-3 u-lrg-2-3"> <div class="l-box"> <h1 class="text-box-head" ng-bind="websiteConfig.photo_title"></h1> <p class="text-box-subhead" ng-bind="websiteConfig.photo_description"></p> </div> </div> <div class="photo-box u-1" ng-repeat="pic in pictures" ng-class="{'photo-box-thin' : pic.long , 'u-med-1-2 u-lrg-1-3':!pic.long}"> <a class="fancybox-thumb" rel="fancybox-thumb" href="{{pic.img}}" title="{{pic.title}}"> <img ng-src="{{pic.thumbnail}}" alt="{{pic.title}}" height="250"> </a> <aside class="photo-box-caption"> <span> {{pic.title}} </span> </aside> </div> <script type="text/javascript">$(document).ready(function() {
+        $(".fancybox-thumb").fancybox({
+            prevEffect  : 'none',
+            nextEffect  : 'none',
+            helpers : {
+                title   : {
+                    type: 'outside'
+                },
+                thumbs  : {
+                    width   : 50,
+                    height  : 50
+                }
+            }
+        });
+    });</script>
