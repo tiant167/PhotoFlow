@@ -41,15 +41,24 @@ class Picture(models.Model):
                 THUMBNAIL_SIZE = (750,933)
             else:
                 THUMBNAIL_SIZE = (622,500)
-
-        DJANGO_TYPE = self.img.file.content_type
-
-        if DJANGO_TYPE == 'image/jpeg':
-            PIL_TYPE = 'jpeg'
-            FILE_EXTENSION = 'jpg'
-        elif DJANGO_TYPE == 'image/png':
-            PIL_TYPE = 'png'
-            FILE_EXTENSION = 'png'
+        try:
+            DJANGO_TYPE = self.img.file.content_type
+            if DJANGO_TYPE == 'image/jpeg':
+                PIL_TYPE = 'jpeg'
+                FILE_EXTENSION = 'jpg'
+            elif DJANGO_TYPE == 'image/png':
+                PIL_TYPE = 'png'
+                FILE_EXTENSION = 'png'
+        except AttributeError:
+            # if update the object will get a File Object not UploadFile Obj
+            # so it should get the ext from name
+            ext = self.img.file.split('.')[-1]
+            if ext in ('jpg','jpeg','JPG','JPEG'):
+                PIL_TYPE = 'jpeg'
+                FILE_EXTENSION = 'jpg'
+            elif ext in ('png','PNG'):
+                PIL_TYPE = 'png'
+                FILE_EXTENSION = 'png' 
 
         # Open original photo which we want to thumbnail using PIL's Image
         image = Image.open(StringIO(self.img.read()))
