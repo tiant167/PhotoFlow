@@ -6,13 +6,14 @@
 - 个人博客，包含 Photo 和 Blog 两块。
 - AngularJS 单页面应用
 - pure CSS 响应式设计
-- Django 后端服务
+- Django 1.7 + Restful API (Class-Based-View)
+- Django Admin 作为 CMS
 - 支持 Markdown，图片压缩，Fancybox 图片浏览等
 
 ## 没图你说个……
 
 
-## 概述
+## 开发相关概述
 
 ### 前端
 前端的文件已经打包在 `dist` 文件夹中，如果做了修改可以重新 build
