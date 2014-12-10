@@ -52,7 +52,7 @@ class Picture(models.Model):
         except AttributeError:
             # if update the object will get a File Object not UploadFile Obj
             # so it should get the ext from name
-            ext = self.img.file.split('.')[-1]
+            ext = self.img.file.name.split('.')[-1]
             if ext in ('jpg','jpeg','JPG','JPEG'):
                 PIL_TYPE = 'jpeg'
                 FILE_EXTENSION = 'jpg'
