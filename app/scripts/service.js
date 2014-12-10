@@ -70,27 +70,31 @@ var $notice = {
 
 angular.module('photoFlowApp.base.services.api', [])
   .factory('apiHelper', ['$http', apiHelper])
-  .factory('apiHelperInterceptor', function($q) {
-    return {
-      responseError: function(response) {
-        if (response.config.url.indexOf('/api/') > -1) {
-          $notice.error('error-' + response.status + ': ' +
-            (response.config.url || '') + ', 接口出问题啦!');
-        }
-        return $q.reject(response);
-      },
-
-      response: function(response) {
-        // config be closed
-        if (response.config.url.indexOf('/api/') > -1) {
-          if (response.config.method === 'POST') {
-            $notice.success('操作成功！');
+  .factory('apiHelperInterceptor', ['$q',
+    function($q) {
+      return {
+        responseError: function(response) {
+          if (response.config.url.indexOf('/api/') > -1) {
+            $notice.error('error-' + response.status + ': ' +
+              (response.config.url || '') + ', 接口出问题啦!');
           }
+          return $q.reject(response);
+        },
+
+        response: function(response) {
+          // config be closed
+          if (response.config.url.indexOf('/api/') > -1) {
+            if (response.config.method === 'POST') {
+              $notice.success('操作成功！');
+            }
+          }
+          return response;
         }
-        return response;
-      }
-    };
-  })
-  .config(function($httpProvider) {
-    $httpProvider.interceptors.push('apiHelperInterceptor');
-  });
+      };
+    }
+  ])
+  .config(['$httpProvider',
+    function($httpProvider) {
+      $httpProvider.interceptors.push('apiHelperInterceptor');
+    }
+  ]);
