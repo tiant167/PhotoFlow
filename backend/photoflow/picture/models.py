@@ -83,6 +83,7 @@ class Picture(models.Model):
 
     def save(self):
         # create a thumbnail
-        self.create_thumbnail()
+        if self.thumbnail == None:
+            self.create_thumbnail()
 
         super(Picture, self).save()
