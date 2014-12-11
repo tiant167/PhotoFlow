@@ -23,6 +23,8 @@
 
 ![article](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/article.png 'article')
 
+![article_small](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/article_small.png 'article_small')
+
 
 ## 开发相关概述
 
