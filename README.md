@@ -2,6 +2,8 @@
 图片展示墙，内容来源于网友的图片链接。
 灵感来源于 pure 的一个 Layout
 写着写着就写成博客了，不过无所谓吧，打发点时间
+
+可以直接在我的博客上看效果 [t.tinkerlab.cn](http://t.tinkerlab.cn "t")
 ## Features
 - 个人博客，包含 Photo 和 Blog 两块。
 - AngularJS 单页面应用
