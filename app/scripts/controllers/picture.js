@@ -8,8 +8,8 @@
  * Controller of the photoFlowApp
  */
 angular.module('photoFlowApp')
-  .controller('PictureCtrl', ['$scope', 'apiHelper',
-    function($scope, apiHelper) {
+  .controller('PictureCtrl', ['$scope', 'apiHelper', 'Lightbox',
+    function($scope, apiHelper, Lightbox) {
       var prefix = '/api';
       var apiMap = {
         getPictureList: 'GET ' + prefix + '/picture/list/'
@@ -21,7 +21,8 @@ angular.module('photoFlowApp')
         var smallPic = [];
         var longPic = [];
         angular.forEach($scope.pictures, function(v) {
-
+          v.url = v.img;
+          v.thumbUrl = v.thumbnail;
           // 这段是把长的短的区分开
           if (v.long) {
             longPic.push(v);
@@ -42,5 +43,9 @@ angular.module('photoFlowApp')
         }
         $scope.pictures = smallPic;
       });
+
+      $scope.openLightboxModal = function(index) {
+        Lightbox.openModal($scope.pictures, index);
+      };
     }
   ]);

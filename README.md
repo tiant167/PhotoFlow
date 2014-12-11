@@ -26,10 +26,7 @@
 
 - [angular-markdown-directive](https://github.com/btford/angular-markdown-directive "angular-markdown-directive")
 - [showdown](https://github.com/showdownjs/showdown "showdown")
-- [fancyBox](https://github.com/fancyapps/fancyBox "fancyBox")
-- [jquery](https://github.com/jquery/jquery "jquery")
-
-因为 fancyBox 依赖于 jQuery，后面考虑会换掉 fancyBox，用 AngularJS 相关的 Album 去实现
+- [angular-bootstrap-lightbox](https://github.com/compact/angular-bootstrap-lightbox "angular-bootstrap-lightbox")
 
 项目使用 Yeoman，Grunt，Bower 构建，这块相关的文档麻烦查看 Yeoman 的[帮助文档](http://yeoman.io/learning/index.html "Yeoman")
 
@@ -81,6 +78,11 @@ nginx 的配置如下
 
             location /static/ {
                 alias  /your_path/PhotoFlow/backend/photoflow/static/;
+                index  index.html index.htm;
+            }
+
+            location /fonts/ {
+                alias  /root/cht_django/PhotoFlow/fonts/;
                 index  index.html index.htm;
             }
 
