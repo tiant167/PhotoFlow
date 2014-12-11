@@ -11,9 +11,9 @@
 - 支持 Markdown，图片压缩，Fancybox 图片浏览等
 
 ## 没图你说个……
-![bigPic](https://github.com/tiant167/PhotoFlow/tree/master/readme_pic/big.png 'bigPic')
+![bigPic](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/big.png 'bigPic')
 
-![smallPic](https://github.com/tiant167/PhotoFlow/tree/master/readme_pic/small.tiff 'smallPic')
+![smallPic](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/small.tiff 'smallPic')
 
 ## 开发相关概述
 
