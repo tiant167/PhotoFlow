@@ -15,6 +15,13 @@
 
 ![smallPic](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/small.png 'smallPic')
 
+![pic_preview](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/pic_preview.png 'pic_preview')
+
+![bloglist](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/bloglist.png 'bloglist')
+
+![article](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/article.png 'article')
+
+
 ## 开发相关概述
 
 ### 前端
