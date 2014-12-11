@@ -3,14 +3,14 @@
 灵感来源于 pure 的一个 Layout
 写着写着就写成博客了，不过无所谓吧，打发点时间
 
-可以直接在我的博客上看效果 [t.tinkerlab.cn](http://t.tinkerlab.cn "t")
+可以直接在我的博客上看效果 **[t.tinkerlab.cn](http://t.tinkerlab.cn "t")**
 ## Features
 - 个人博客，包含 Photo 和 Blog 两块。
 - AngularJS 单页面应用
 - pure CSS 响应式设计
 - Django 1.7 + Restful API (Class-Based-View)
 - Django Admin 作为 CMS
-- 支持 Markdown，图片压缩，Fancybox 图片浏览等
+- 支持 Markdown，图片自动压缩，首页图片自动排版，Photo Gallery 等
 
 ## 没图你说个……
 ![bigPic](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/big.png 'bigPic')
