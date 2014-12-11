@@ -21,7 +21,7 @@ angular.module('photoFlowApp')
         var smallPic = [];
         var longPic = [];
         angular.forEach($scope.pictures, function(v) {
-          v.url = v.img;
+          v.url = v.middle;
           v.thumbUrl = v.thumbnail;
           // 这段是把长的短的区分开
           if (v.long) {
