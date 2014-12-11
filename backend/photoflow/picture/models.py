@@ -40,14 +40,14 @@ class Picture(models.Model):
         if self.long:
             # 竖着的长图我就不考虑了
             THUMBNAIL_SIZE = (1870,500)
-            MIDDLE_SIZE = (3560,1000)
+            MIDDLE_SIZE = (2805,750)
         else:
             if self.img_height > self.img_width:
                 THUMBNAIL_SIZE = (750,933)
-                MIDDLE_SIZE = (1500,1866)
+                MIDDLE_SIZE = (750,933)
             else:
                 THUMBNAIL_SIZE = (622,500)
-                MIDDLE_SIZE = (1866,1500)
+                MIDDLE_SIZE = (933,750)
 
         try:
             DJANGO_TYPE = self.img.file.content_type
