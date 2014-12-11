@@ -13,7 +13,7 @@
 ## 没图你说个……
 ![bigPic](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/big.png 'bigPic')
 
-![smallPic](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/small.tiff 'smallPic')
+![smallPic](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/small.png 'smallPic')
 
 ## 开发相关概述
 
