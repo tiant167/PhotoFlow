@@ -8,7 +8,8 @@
 ## Features
 - 个人博客，包含 Photo 和 Blog 两块。
 - AngularJS 单页面应用
-- pure CSS 响应式设计
+- Prerender.io SEO 处理
+- Pure CSS 响应式设计
 - Django 1.7 + Restful API (Class-Based-View)
 - Django Admin 作为 CMS
 - 支持 Markdown，图片自动压缩，首页图片自动排版，Photo Gallery 等
@@ -33,6 +34,8 @@
 前端的文件已经打包在 `dist` 文件夹中，如果做了修改可以重新 build
 
 前端使用的是 [AngularJS](https://angularjs.org/ "AngularJS") 编写，是一个单页面应用。CSS 框架使用了 [PureCSS](https://github.com/yahoo/pure/ "PureCss")
+
+针对 SEO 使用了 Prerender.io，国内访问 prerender 的服务器有点慢，SEO 的效果也不知道好不好，看看吧~
 
 此外使用到了以下开源项目：
 
@@ -83,6 +86,9 @@ nginx 的配置如下
             listen   80;
             server_name t.tinkerlab.cn;
 
+            root  /root/cht_django/PhotoFlow/dist;
+            index  index.html;
+            
             location /api/ {
              include        uwsgi_params;
              uwsgi_pass     127.0.0.1:10001;
@@ -99,8 +105,39 @@ nginx 的配置如下
             }
 
             location / {
-                alias  /your_path//PhotoFlow/dist/;
-                index  index.html index.htm;
+                try_files $uri @prerender;
+            }
+
+            location @prerender {
+                proxy_set_header X-Prerender-Token U726xIcgSTvjFFEUgVyn;
+
+                set $prerender 0;
+                if ($http_user_agent ~* "baiduspider|twitterbot|facebookexternalhit|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot") {
+                    set $prerender 1;
+                }
+                if ($args ~ "_escaped_fragment_") {
+                    set $prerender 1;
+                }
+                if ($http_user_agent ~ "Prerender") {
+                    set $prerender 0;
+                }
+                if ($uri ~ "\.(js|css|xml|less|png|jpg|jpeg|gif|pdf|doc|txt|ico|rss|zip|mp3|rar|exe|wmv|doc|avi|ppt|mpg|mpeg|tif|wav|mov|psd|ai|xls|mp4|m4a|swf|dat|dmg|iso|flv|m4v|torrent)") {
+                    set $prerender 0;
+                }
+
+                #resolve using Google's DNS server to force DNS resolution and prevent caching of IPs
+                resolver 8.8.8.8;
+
+                if ($prerender = 1) {
+
+                    #setting prerender as a variable forces DNS resolution since nginx caches IPs and doesnt play well with load balancing
+                    set $prerender "service.prerender.io";
+                    rewrite .* /$scheme://$host$request_uri? break;
+                    proxy_pass http://$prerender;
+                }
+                if ($prerender = 0) {
+                    rewrite .* /index.html break;
+                }
             }
         }
 
