@@ -10,7 +10,6 @@
  */
 angular.module('photoFlowApp', ['ngRoute', 'photoFlowApp.base.services.api', 'ngSanitize', 'btford.markdown', 'bootstrapLightbox'])
   .config(function($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true).hashPrefix("!");
 
     $routeProvider
       .when('/', {
@@ -28,4 +27,7 @@ angular.module('photoFlowApp', ['ngRoute', 'photoFlowApp.base.services.api', 'ng
       .otherwise({
         redirectTo: '/'
       });
+
+    $locationProvider.hashPrefix('!');
+
   });
