@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="photoFlowApp" ng-controller="MainCtrl">
   <head>
     <meta charset="utf-8">
     <title>{{websiteConfig.title}} | {{ seo.pageTitle }}</title>
@@ -22,14 +22,14 @@
     <link rel="stylesheet" href="styles/blog.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="photoFlowApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
 
-    <div id="layout" class="pure-g" ng-controller="MainCtrl">
+    <div id="layout" class="pure-g">
         <div class="sidebar pure-u-1 pure-u-md-1-4">
             <div class="header">
                 <h1 class="brand-title" ng-bind="websiteConfig.title"></h1>
