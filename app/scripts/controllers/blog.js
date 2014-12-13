@@ -12,7 +12,7 @@ angular.module('photoFlowApp')
     function($scope, apiHelper) {
       // config apiHelper
       window.prerenderReady = false;
-      var prefix = '/api';
+      var prefix = 'http://t.tinkerlab.cn/api';
       var apiMap = {
         // delBlackList: 'GET /api/app/{app_id}/blacklist/delete',
         getBlogList: 'GET ' + prefix + '/blog/list/'

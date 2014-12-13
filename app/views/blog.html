@@ -7,7 +7,7 @@
         <section class="post" ng-repeat="blog in blogsList | filter: {'pinned':true}">
             <header class="post-header">
 
-                <h2 class="post-title">{{blog.title}}</h2>
+                <h2 class="post-title"><a href="#!/article/{{blog.id}}">{{blog.title}}</a></h2>
 
                 <p class="post-meta">
                     Created at <a herf="#">{{blog.create_time | date:'yyyy-MM-dd'}} </a><a class="post-category post-category-{{tag.color}}" href="#" ng-repeat="tag in blog.tags">{{tag.name}}</a>
@@ -18,9 +18,6 @@
                 <p>
                     {{blog.abstract}}
                 </p>
-            </div>
-            <div class="read-more">
-                <a href="#!/article/{{blog.id}}">Read More</a>
             </div>
         </section>
     </div>
@@ -30,7 +27,7 @@
         <section class="post" ng-repeat="blog in blogsList | filter: {'pinned':false}">
             <header class="post-header">
 
-                <h2 class="post-title">{{blog.title}}</h2>
+                <h2 class="post-title"><a href="#!/article/{{blog.id}}">{{blog.title}}</a></h2>
 
                 <p class="post-meta">
                     Created at <a herf="#">{{blog.create_time | date:'yyyy-MM-dd'}} </a><a class="post-category post-category-{{tag.color}}" href="#" ng-repeat="tag in blog.tags">{{tag.name}}</a>
@@ -41,9 +38,6 @@
                 <p>
                     {{blog.abstract}}
                 </p>
-            </div>
-            <div class="read-more">
-                <a href="#!/article/{{blog.id}}">Read More</a>
             </div>
         </section>
     </div>
