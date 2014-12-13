@@ -10,6 +10,7 @@
 angular.module('photoFlowApp')
   .controller('PictureCtrl', ['$scope', 'apiHelper', 'Lightbox',
     function($scope, apiHelper, Lightbox) {
+      window.prerenderReady = false;
       var prefix = '/api';
       var apiMap = {
         getPictureList: 'GET ' + prefix + '/picture/list/'
@@ -42,6 +43,7 @@ angular.module('photoFlowApp')
           }
         }
         $scope.pictures = smallPic;
+        window.prerenderReady = true;
       });
 
       $scope.openLightboxModal = function(index) {

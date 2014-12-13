@@ -11,6 +11,7 @@ angular.module('photoFlowApp')
   .controller('BlogCtrl', ['$scope', 'apiHelper',
     function($scope, apiHelper) {
       // config apiHelper
+      window.prerenderReady = false;
       var prefix = '/api';
       var apiMap = {
         // delBlackList: 'GET /api/app/{app_id}/blacklist/delete',
@@ -20,6 +21,7 @@ angular.module('photoFlowApp')
 
       apiHelper('getBlogList').then(function(data) {
         $scope.blogsList = data.data;
+        window.prerenderReady = true;
       });
       $scope.$parent.seo = {
         pageTitle: 'Article List',

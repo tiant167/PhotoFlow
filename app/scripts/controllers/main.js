@@ -3,6 +3,7 @@
 angular.module('photoFlowApp')
   .controller('MainCtrl', ['$scope', 'apiHelper',
     function($scope, apiHelper) {
+      window.prerenderReady = false;
       var prefix = '/api';
       var apiMap = {
         getWebsiteConf: 'GET ' + prefix + '/website/conf/'

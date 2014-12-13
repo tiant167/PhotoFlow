@@ -11,6 +11,7 @@ angular.module('photoFlowApp')
   .controller('ArticleCtrl', ['$scope', 'apiHelper', '$routeParams', '$location',
 
     function($scope, apiHelper, $routeParams, $location) {
+      window.prerenderReady = false;
       var prefix = '/api';
       var apiMap = {
         // delBlackList: 'GET /api/app/{app_id}/blacklist/delete',
@@ -29,6 +30,7 @@ angular.module('photoFlowApp')
           pageTitle: $scope.blog.title,
           pageDescription: $scope.blog.abstract
         };
+        window.prerenderReady = true;
       });
 
       $scope.jumpToURL = function(path) {
