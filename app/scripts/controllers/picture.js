@@ -47,5 +47,10 @@ angular.module('photoFlowApp')
       $scope.openLightboxModal = function(index) {
         Lightbox.openModal($scope.pictures, index);
       };
+
+      $scope.seo = {
+        pageTitle: 'Gallery',
+        pageDescription: 'Photo Gallery of My Blog'
+      };
     }
   ]);

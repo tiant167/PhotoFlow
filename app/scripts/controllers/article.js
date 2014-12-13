@@ -30,5 +30,11 @@ angular.module('photoFlowApp')
       $scope.jumpToURL = function(path) {
         $location.path(path);
       };
+
+      $scope.seo = {
+        pageTitle: $scope.blog.title,
+        pageDescription: $scope.blog.abstract
+
+      };
     }
   ]);

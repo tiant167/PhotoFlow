@@ -2,9 +2,10 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Photo Flow</title>
-    <meta name="description" content="Photo flows in from all over the World">
+    <title>{{websiteConfig.title}} | {{ seo.pageTitle }}</title>
+    <meta name="description" content="{{ seo.metaDescription }}">
     <meta name="viewport" content="width=device-width">
+    <meta name="fragment" content="!">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <link rel="stylesheet" href="bower_components/pure/pure.css" />
@@ -37,10 +38,10 @@
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a class="pure-button" href="/#!/">Photo</a>
+                            <a class="pure-button" href="/">Photo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="pure-button" href="/#!/blog">Blog</a>
+                            <a class="pure-button" href="/blog">Blog</a>
                         </li>
                     </ul>
                 </nav>

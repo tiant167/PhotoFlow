@@ -12,5 +12,9 @@ angular.module('photoFlowApp')
       apiHelper('getWebsiteConf').then(function(data) {
         $scope.websiteConfig = data.data;
       });
+      $scope.seo = {
+        pageTitle: '',
+        pageDescription: ''
+      };
     }
   ]);

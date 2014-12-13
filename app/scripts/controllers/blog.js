@@ -21,6 +21,10 @@ angular.module('photoFlowApp')
       apiHelper('getBlogList').then(function(data) {
         $scope.blogsList = data.data;
       });
+      $scope.$parent.seo = {
+        pageTitle: 'Article List',
+        pageDescripton: 'Welcome to my Blog\'s atricle list'
+      };
 
     }
   ]);
