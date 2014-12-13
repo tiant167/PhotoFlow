@@ -25,16 +25,14 @@ angular.module('photoFlowApp')
       }).then(function(data) {
         $scope.blog = data.data;
         $scope.markdown = data.data.content;
+        $scope.seo = {
+          pageTitle: $scope.blog.title,
+          pageDescription: $scope.blog.abstract
+        };
       });
 
       $scope.jumpToURL = function(path) {
         $location.path(path);
-      };
-
-      $scope.seo = {
-        pageTitle: $scope.blog.title,
-        pageDescription: $scope.blog.abstract
-
       };
     }
   ]);
