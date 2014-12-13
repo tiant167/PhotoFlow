@@ -9,7 +9,9 @@
  * Main module of the application.
  */
 angular.module('photoFlowApp', ['ngRoute', 'photoFlowApp.base.services.api', 'ngSanitize', 'btford.markdown', 'bootstrapLightbox'])
-  .config(function($routeProvider) {
+  .config(function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(false).hashPrefix("!");
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
