@@ -4,7 +4,7 @@
         <h1 class="content-subhead">Pinned Post</h1>
 
         <!-- A single blog post -->
-        <section class="post" ng-repeat="blog in blogsList | filter: {'pinned':true}">
+        <section class="post" ng-repeat="blog in blogsList | filter: {'pinned':true} | orderBy:'-create_time'">
             <header class="post-header">
 
                 <h2 class="post-title"><a href="#!/article/{{blog.id}}">{{blog.title}}</a></h2>
@@ -24,7 +24,7 @@
 
     <div class="posts">
         <h1 class="content-subhead">Recent Posts</h1>
-        <section class="post" ng-repeat="blog in blogsList | filter: {'pinned':false}">
+        <section class="post" ng-repeat="blog in blogsList | filter: {'pinned':false} | orderBy:'-create_time'">
             <header class="post-header">
 
                 <h2 class="post-title"><a href="#!/article/{{blog.id}}">{{blog.title}}</a></h2>
