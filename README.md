@@ -27,6 +27,28 @@
 
 ![article_small](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/article_small.png 'article_small')
 
+## CMS Admin
+使用 Django Admin 来做 CMS 后台。
+
+在后台中可以方便的进行文章的编辑、图片的上传、博客的名字签名等信息的修改等。
+
+文章支持 Markdown 语法，并且能够实时预览效果。
+
+图片上传会自动压缩，生成缩略图和中等图。能自动识别图片尺寸，判断是否是竖图、全景图等。
+对全景图的展示和其他的图片不一样，在展示时会使用整屏。
+
+对于博客的名字、描述以及图片首页的签名都是可以随时修改和定制的，没有写死的数据。
+
+此外，在后台中还加上了系统使用情况，包括内存、CPU、硬盘等系统信息。
+
+![sys](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/sys.png 'sys')
+
+![picadmin](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/pic_admin.png 'picadmin')
+
+![blogadmin](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/blog_admin.png 'blogadmin')
+
+![conf](https://raw.githubusercontent.com/tiant167/PhotoFlow/master/readme_pic/conf_admin.png 'conf')
+
 
 ## 开发相关概述
 
@@ -109,7 +131,7 @@ nginx 的配置如下
             }
 
             location @prerender {
-                proxy_set_header X-Prerender-Token U726xIcgSTvjFFEUgVyn;
+                proxy_set_header X-Prerender-Token YOURTOKEN;
 
                 set $prerender 0;
                 if ($http_user_agent ~* "baiduspider|twitterbot|facebookexternalhit|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot") {
