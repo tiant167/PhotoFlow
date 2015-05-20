@@ -4,7 +4,8 @@
 写着写着就写成博客了，不过无所谓吧，打发点时间。
 原来那个想法可能另起炉灶做一个~
 
-可以直接在我的博客上看效果 **[t.tinkerlab.cn](http://t.tinkerlab.cn "t")**
+原来的服务器拿去做更重要的事情了…所以直接 pull 下来直接看看效果呗~
+
 ## Features
 - 个人博客，包含 Photo 和 Blog 两块。
 - AngularJS 单页面应用
